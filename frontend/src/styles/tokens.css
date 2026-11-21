@@ -1,0 +1,47 @@
+:root {
+    /* surfaces */
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --subtle: #f3f3f0;
+    --border: #e6e5e0;
+    --border-strong: #d4d3cc;
+
+    /* text */
+    --text: #111110;
+    --text-2: #5f5e58;
+    --text-3: #96958d;
+
+    /* accent: actions and links */
+    --accent: #2b4fe0;
+    --accent-hover: #2442c2;
+    --accent-bg: #eef1fd;
+
+    /* status: only for meaning (match, gap, caution) */
+    --good: #16794a;
+    --good-bg: #eaf5ef;
+    --warn: #a15c07;
+    --warn-bg: #fbf1e2;
+    --bad: #c2391b;
+    --bad-bg: #fcede9;
+
+    /* type */
+    --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+    --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    --font-mono: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
+
+    /* shape and depth */
+    --radius-sm: 7px;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow: 0 1px 2px rgba(17, 17, 16, 0.04), 0 4px 16px -6px rgba(17, 17, 16, 0.08);
+    --shadow-lg: 0 24px 64px -16px rgba(17, 17, 16, 0.28);
+
+    /* motion */
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --dur-fast: 150ms;
+    --dur: 250ms;
+
+    /* layout */
+    --container: 1080px;
+    --nav-height: 60px;
+}

@@ -1,0 +1,245 @@
+.shot {
+    max-width: 960px;
+    overflow: hidden;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 2px rgba(17, 17, 16, 0.04), 0 24px 60px -20px rgba(17, 17, 16, 0.16);
+    transition: transform 0.5s var(--ease), box-shadow 0.5s;
+}
+
+.shot:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 2px rgba(17, 17, 16, 0.04), 0 32px 70px -22px rgba(17, 17, 16, 0.2);
+}
+
+.bar {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 14px;
+    background: var(--subtle);
+    border-bottom: 1px solid var(--border);
+}
+
+.bar i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-strong);
+}
+
+.url {
+    margin-left: 12px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-3);
+}
+
+.body {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+}
+
+.side {
+    padding: 28px 24px;
+    border-right: 1px solid var(--border);
+}
+
+.main {
+    min-width: 0;
+    padding: 28px;
+}
+
+.scoreRow {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.gauge {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+}
+
+.gauge svg {
+    transform: rotate(-90deg);
+}
+
+.arc {
+    animation: draw 1.4s 0.9s var(--ease) both;
+}
+
+.value {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+}
+
+.job {
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--text-2);
+}
+
+.metrics {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.metric+.metric {
+    margin-top: 14px;
+}
+
+.metricRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.metricRow span {
+    color: var(--text-2);
+}
+
+.metricRow b {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.track {
+    height: 5px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--subtle);
+}
+
+.fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--text);
+    animation: grow 1.1s 1s var(--ease) both;
+}
+
+.label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 22px;
+}
+
+.tag {
+    padding: 4px 10px;
+    font-size: 13px;
+    color: var(--bad);
+    background: var(--bad-bg);
+    border: 1px solid #f3cfc6;
+    border-radius: 6px;
+}
+
+.required::after {
+    content: 'Required';
+    margin-left: 7px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.compare {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+}
+
+.box {
+    min-width: 0;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+.before {
+    color: var(--text-2);
+    background: var(--subtle);
+    border-color: transparent;
+}
+
+.after {
+    color: var(--text);
+    background: var(--good-bg);
+    border-color: #bfe0cd;
+}
+
+.k {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+.after .k {
+    color: var(--good);
+}
+
+.arrow {
+    display: grid;
+    place-items: center;
+    color: var(--text-3);
+}
+
+/* start from an empty ring; the end value comes from the element's own dashoffset */
+@keyframes draw {
+    from {
+        stroke-dashoffset: var(--ring);
+    }
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .body {
+        grid-template-columns: 1fr;
+    }
+
+    .side {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 560px) {
+    .compare {
+        grid-template-columns: 1fr;
+    }
+
+    .arrow {
+        height: 24px;
+        transform: rotate(90deg);
+    }
+}

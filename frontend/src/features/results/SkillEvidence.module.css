@@ -1,0 +1,30 @@
+.list {
+    list-style: none;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.row:first-child {
+    border-top: 0;
+}
+
+.footnote {
+    padding: 12px 20px;
+    font-size: 13px;
+    color: var(--text-3);
+    border-top: 1px solid var(--border);
+}
+
+.empty {
+    padding: 18px 20px;
+    font-size: 14px;
+    color: var(--text-2);
+}

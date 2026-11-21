@@ -1,0 +1,81 @@
+.glyph {
+    color: var(--text);
+    display: block;
+}
+
+.glyph path {
+    stroke-dasharray: 1 2;
+}
+
+.animated .bar {
+    animation: bar 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animated .stem {
+    animation: stem 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.still path {
+    stroke-dashoffset: 0;
+    opacity: 0.25;
+}
+
+@keyframes bar {
+    0% {
+        stroke-dashoffset: 1;
+        opacity: 0;
+    }
+
+    3% {
+        opacity: 1;
+    }
+
+    22% {
+        stroke-dashoffset: 0;
+    }
+
+    82% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes stem {
+
+    0%,
+    16% {
+        stroke-dashoffset: 1;
+        opacity: 0;
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    62% {
+        stroke-dashoffset: 0;
+    }
+
+    82% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animated path {
+        animation: none;
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}

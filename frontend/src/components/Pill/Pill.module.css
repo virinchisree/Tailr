@@ -1,0 +1,44 @@
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+    border-radius: 100px;
+    padding: 2px 9px;
+}
+
+.dot::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.good {
+    background: var(--good-bg);
+    color: var(--good);
+}
+
+.warn {
+    background: var(--warn-bg);
+    color: var(--warn);
+}
+
+.bad {
+    background: var(--bad-bg);
+    color: var(--bad);
+}
+
+.accent {
+    background: var(--accent-bg);
+    color: var(--accent);
+}
+
+.neutral {
+    background: var(--subtle);
+    color: var(--text-2);
+}

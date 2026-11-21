@@ -1,0 +1,67 @@
+.box {
+    min-height: 360px;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    animation: fade-in 0.3s ease both;
+}
+
+.inner {
+    padding: 40px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    min-height: 24px;
+    margin-top: 22px;
+    font-size: 15.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    animation: fade-in 0.3s ease both;
+    /* re-runs on each step because the element has key={step} */
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.bar {
+    width: 28px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--subtle);
+    transition: background 0.35s ease;
+}
+
+.on {
+    background: var(--text);
+}
+
+.note {
+    max-width: 38ch;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-3);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
