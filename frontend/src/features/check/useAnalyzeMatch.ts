@@ -83,10 +83,14 @@ export function useAnalyzeMatch() {
         } catch (err) {
             clearTimers();
             if (controller.signal.aborted) return null;
-            const apiError = err instanceof ApiError ? err : new ApiError(0, 'Something went wrong. Please try again.');
+            let apiError = err instanceof ApiError ? err : new ApiError(0, 'Something went wrong. Please try again.');
+            if (apiError.status === 413) {
+                // show it under the resume box, like the other file problems
+                apiError = new ApiError(413, apiError.message, { resumeText: apiError.message });
+            }
             setError(apiError);
-            if (apiError.status === 400) {
-                // validation problem: go back to the inputs and show the field messages there
+            if (apiError.status === 400 || apiError.status === 413) {
+                // a problem with the inputs: go back to them and show the field messages there
                 setPhase('idle');
                 setVisible(false);
             } else {

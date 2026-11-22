@@ -6,8 +6,8 @@ spring:
     name: tailr
   servlet:
     multipart:
-      max-file-size: 5MB      # resume uploads, later
-      max-request-size: 5MB
+      max-file-size: 5MB # resume uploads, later
+      max-request-size: 6MB
 
 management:
   endpoints:

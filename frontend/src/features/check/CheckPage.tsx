@@ -89,7 +89,7 @@ export function CheckPage() {
             ? `Paste the full job description (at least ${MIN_JD_WORDS} words).`
             : null;
 
-    const fieldErrors = error?.status === 400 ? error.fieldErrors : {};
+    const fieldErrors = error && (error?.status === 400 || error?.status === 413) ? error.fieldErrors : {};
 
     return (
         <div className={cn('container', styles.page)}>
@@ -118,7 +118,10 @@ export function CheckPage() {
                             text={resumeText}
                             onTextChange={setResumeText}
                             file={file}
-                            onFileChange={setFile}
+                            onFileChange={(next) => {
+                                setFile(next);
+                                if (error) reset();
+                            }}
                             onUseSample={() => { setFile(null); setResumeText(SAMPLE_RESUME); }}
                             error={fieldErrors.resumeText}
                             disabled={running}

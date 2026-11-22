@@ -1,24 +1,27 @@
 import type { MatchRequest, MatchResponse } from "../types/match";
 import { ApiError, request } from "./client";
 
-export async function analyzeMatch(input: MatchRequest, signal?: AbortSignal): Promise<MatchResponse> {
-    const result = await request<MatchResponse>('/match', { method: 'POST', json: input, signal });
+function assertMatchShape(result: MatchResponse): MatchResponse {
     if (typeof result.resumeText !== 'string' || !Array.isArray(result.rewrites)) {
         throw new ApiError(0, 'The server sent an unexpected response.');
     }
     return result;
 }
 
-// Needs POST /api/match/upload on the background (added with PDF parsing)
-export function analyzeMatchWithFile(
+export async function analyzeMatch(input: MatchRequest, signal?: AbortSignal): Promise<MatchResponse> {
+    return assertMatchShape(await request<MatchResponse>('/match', { method: 'POST', json: input, signal }));
+}
+
+// POST /api/match/upload (PDF/DOCX are read on the backend)
+export async function analyzeMatchWithFile(
     file: File,
     jobDescription: string,
     signal?: AbortSignal,
 ): Promise<MatchResponse> {
     const form = new FormData();
-    form.append('resume', file);
+    form.append('file', file);
     form.append('jobDescription', jobDescription);
-    return request<MatchResponse>('/match/upload', { method: "POST", body: form, signal });
+    return assertMatchShape(await request<MatchResponse>('/match/upload', { method: 'POST', body: form, signal }));
 }
 
 // results are cached under this key so the Results page can read them without refetching
