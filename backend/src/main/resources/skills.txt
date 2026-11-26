@@ -1,0 +1,50 @@
+# name | other spellings (comma-separated)
+Java | core java, j2ee, java ee, jakarta ee
+Spring Boot | spring boot
+Spring Framework | spring framework, spring mvc, spring core
+Spring Security | spring security
+Spring Data JPA | spring data jpa, spring data
+Hibernate | hibernate
+JPA | jpa
+Microservices | microservices, microservice
+REST APIs | rest api, rest apis, restful, rest services, rest web services
+GraphQL | graphql
+Kafka | apache kafka
+RabbitMQ | rabbitmq
+JUnit | junit
+Mockito | mockito
+Maven | maven
+Gradle | gradle
+SQL | sql
+PostgreSQL | postgres
+MySQL | mysql
+Oracle DB | oracle database, oracle db, pl/sql, plsql
+MongoDB | mongo
+Redis | redis
+Elasticsearch | elastic search
+JavaScript | es6
+TypeScript | typescript
+React | react.js, reactjs
+Redux | redux
+Angular | angularjs
+Node.js | nodejs
+HTML | html5
+CSS | css3
+Tailwind CSS | tailwind
+Thymeleaf | thymeleaf
+Docker | docker
+Kubernetes | k8s
+AWS | amazon web services
+Azure | microsoft azure
+GCP | google cloud
+CI/CD | ci cd, continuous integration
+Jenkins | jenkins
+GitHub Actions | github actions
+Git | git
+Linux | linux
+Agile | scrum
+System Design | system design
+Design Patterns | design patterns
+Data Structures | data structures, algorithms, dsa
+Unit Testing | unit testing, unit tests, tdd
+Python | python

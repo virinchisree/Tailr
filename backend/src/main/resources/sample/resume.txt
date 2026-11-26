@@ -1,0 +1,24 @@
+Riya Sharma
+Java Developer | Pune | riya.sharma@example.com
+
+Summary
+Java developer with 3 years of experience building backend services for e-commerce.
+
+Experience
+Software Engineer, ShopKart
+Jun 2022 – Present
+- Built REST APIs in Java and Spring Boot for the order service, handling 50,000 orders a day
+- Reduced PostgreSQL query time by 40% by adding indexes and rewriting Hibernate queries
+- Migrated the checkout module from the monolith into 3 Microservices
+- Wrote JUnit tests that raised coverage from 45% to 80%
+- Worked on the team's internal admin dashboard
+
+Projects
+Expense Tracker (personal)
+- Developed a React front end with a Spring Boot backend for tracking monthly expenses
+
+Skills
+Java, Spring Boot, Hibernate, PostgreSQL, Kafka, Docker, Git, React
+
+Education
+B.Tech, Computer Science, 2022

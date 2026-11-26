@@ -6,6 +6,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.tailr.backend.resume.parse.ResumeTextExtractor;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -17,6 +19,9 @@ class MatchControllerTest {
 
     @MockitoBean
     private MatchService matchService;
+
+    @MockitoBean
+    private ResumeTextExtractor extractor;
 
     @Test
     void rejectsEmptyResume() throws Exception {

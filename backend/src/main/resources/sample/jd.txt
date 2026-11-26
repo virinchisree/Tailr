@@ -1,0 +1,21 @@
+Senior Java Developer – Fintech, Bengaluru
+
+About the role
+We're hiring a backend Java developer to build our payments platform.
+
+Requirements
+- 3+ years of experience with Java and Spring Boot
+- Building REST APIs for high-traffic services
+- Hands-on with PostgreSQL
+- Event streaming with Kafka
+- Containerising services with Docker
+- Caching with Redis
+
+Nice to have
+- Kubernetes
+- AWS
+- React
+
+Responsibilities
+- Design and own payment services end to end
+- Mentor junior developers
